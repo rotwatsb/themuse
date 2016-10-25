@@ -17,4 +17,8 @@ CREATE TABLE jobs_locations (
 	location_id int REFERENCES locations (location_id) ON DELETE RESTRICT,
 	CONSTRAINT job_location_id PRIMARY KEY (job_id, location_id));
 
+CREATE INDEX jobs_locations_job_id_index ON jobs_locations (job_id);
+
+CREATE INDEX jobs_locations_location_id_index ON jobs_locations (location_id);
+
     COMMIT;
